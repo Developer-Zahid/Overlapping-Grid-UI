@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    background: #e6e8ff;
+    color: #fff;
+}
+section{
+    margin: 3rem 0;
+    display: grid;
+    align-items: center;
+    max-width: 850px;
+    width: 90%;
+    height: 600px;
+    grid-template-columns: 30px 1fr 30px;
+    grid-template-rows: repeat(5, 1fr);
+    -ms-grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+}
+.image{
+    width: 100%;
+    height: 100%;
+    background: url(https://images.unsplash.com/photo-1542662565-7e4b66bae529?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=564&q=80) no-repeat center / cover;
+    background: url(https://images.unsplash.com/photo-1586414652018-2c8cdde6d7cd?ixlib=rb-1.2.1&auto=format&fit=crop&w=375&q=80) no-repeat center / cover;
+    border-radius: 10px;
+    grid-column: 1/4;
+    grid-row: 1/4;
+    box-shadow: 0 0 10px rgba($color: #000000, $alpha: 0.1);
+}
+.content{
+    padding: 2rem 1rem;
+    background: #565f75;
+    border-radius: 10px;
+    grid-column: 2/3;
+    grid-row: 3/6;
+    font-size: 13px;
+    text-align: center;
+    &__heading{
+        font-size: 2.8em;
+        letter-spacing: 1.5px;
+        font-weight: 600;
+    }
+    &__txt{
+        font-size: 1.1em;
+        margin: 1em 0 2em;
+        line-height: 1.8em;
+        font-weight: 400;
+    }
+    &__btn{
+        display: inline-block;
+        font-size: 1.1em;
+        padding: 1em 1.5em;
+        color: #222;
+        background: #fff;
+        text-decoration: none;
+        letter-spacing: 2px;
+        transition: all ease-in-out .2s;
+        &:hover{
+            color: #fff;
+            background: #222;
+        }
+    }
+}
+@media (min-width:700px){
+    section{
+        grid-template-columns: repeat(5, 1fr);
+        -ms-grid-columns: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr;
+        margin: 1rem 0;
+    }
+    .image{
+        grid-column: 1/4;
+        grid-row: 1/1;
+    }
+    .content{
+        grid-column: 3/6;
+        grid-row: 1/1;
+        padding: 4.5rem 2rem;
+        font-size: 16px;
+        text-align: unset;
+    }
+}
